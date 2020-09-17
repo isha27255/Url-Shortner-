@@ -1,3 +1,3 @@
 # Url-Shortener
 
-![url-shortener](url-shortener.png)
+![screenshot](url_shortener.png)
