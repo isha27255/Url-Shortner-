@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Shortener</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<style>
+
+	</style>
+
+<body>
+	<h1 style="text-align: center;padding-top: 5%;"><strong>UrL ShorteNer </strong></h1>
+	<div class="container" style="padding-top: 8%;">
+	<p>A friendly URL may be desired for messaging technologies that limit the number of characters in a message (for example SMS), for reducing the amount of typing required if the reader is copying a URL from a print source, for making it easier for a person to remember, or for the intention of a permalink. This URL shortening service provides a user friendly URL for a long/tedious URL and hence making our work easier.</p>
+		<br><br>
+	<form method="POST" action="/">
+  <div class="form-group">
+  	{% csrf_token %}
+    <label><strong>Enter the Url to shorten : </strong></label>
+    <input name="provided_link" type="text" class="form-control" placeholder="Enter Link">
+    <br><br>
+  <button type="submit" class="btn btn-dark" style="float: right;"><strong>Submit to Shorten link</strong></button>
+</form>
+<br><br>
+{% if final_short_url %}
+
+<p>Short link for the given URL is : </p><a href="{{final_short_url}}"><strong>{{final_short_url}}</strong></a></p>
+<p>Thank you! Visit us again</p>
+{% endif %}
+</div>
+</body>
+</html>
